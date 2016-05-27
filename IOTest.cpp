@@ -26,6 +26,9 @@ void StringTest(){
 	for(int i=0; i<3; ++i){
 		cout << ls[i] << endl;
 	}
+	//as there may be addresses instead of values in string, if delete[] is used, there will be memory leak.
+	//when the function returned, the deconstructor of string in 'vs'(the previous local variable) will be called
+	//which may point to the same memory with ls. 
 	//delete[] ls;
 	fclose(fp);
 	cout << "---------------------------------------------------" << endl;
@@ -37,12 +40,12 @@ int main(int argc, char* argv[])
 	//StringTest();
 	cout << "sizeof(string): " << sizeof(string) << endl;
 	IO io;
-	// "D:\\search_task_20160328143341.spectra"
 	string inputpath = "ptop1.spectra";
 	if (argc > 1){
 		inputpath = argv[1];
 	}
 	vector<PrSM> prsms;
+
 	//io.testIO();
 
 	io.fscanfTest(inputpath, prsms);
