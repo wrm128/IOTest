@@ -54,12 +54,12 @@ int main(int argc, char* argv[])
 	prsms.clear();
 	io.ifstreamTest(inputpath, prsms);
 	io.ofstreamTest(inputpath, prsms);
-	prsms.clear();
-	io.freadSscanfTest(inputpath, prsms);
 	//string path2 = io.fwriteTest(inputpath, prsms);
 	//prsms.clear();
 	//io.freadTest(path2, prsms);
 	io.fwriteSprintfTest(inputpath, prsms);
+	prsms.clear();
+	io.freadSscanfTest(inputpath, prsms);
 	return 0;
 }
 
